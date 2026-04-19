@@ -13,30 +13,44 @@ function App() {
 
   const formatPrice = (price) => `₩ ${price.toLocaleString()}`;
 
+  const badgeMap = {
+    대표메뉴: "BEST",
+    시그니처: "SIGNATURE",
+    인기: "POPULAR",
+    추천: "RECOMMENDED",
+    BEST: "BEST",
+    SIGNATURE: "SIGNATURE",
+    POPULAR: "POPULAR",
+    RECOMMENDED: "RECOMMENDED",
+  };
+
   const getHighlightLabel = (badges = []) => {
-    if (badges.includes("대표메뉴")) return "BEST";
-    if (badges.includes("인기")) return "인기";
-    if (badges.includes("추천")) return "추천";
-    return null;
+    const matched = badges.find((badge) => badgeMap[badge]);
+    return matched ? badgeMap[matched] : null;
+  };
+
+  const getBadgeClassName = (label) => {
+    if (label === "BEST") return "highlight-badge best";
+    if (label === "SIGNATURE") return "highlight-badge signature";
+    if (label === "POPULAR") return "highlight-badge popular";
+    if (label === "RECOMMENDED") return "highlight-badge recommended";
+    return "highlight-badge";
   };
 
   return (
     <div className="menu-page">
       <section className="hero-card">
-        <div className="hero-top-row">
-  <p className="eyebrow">OSTERIA COMO</p>
-</div>
-
-<h1>MENU</h1>
-<p className="hero-description">
-  Signature fresh pasta, pizza, risotto and mains.
-</p>
+        <div className="brand-lockup">
+          <p className="brand-top">Osteria</p>
+          <h1>COMO</h1>
+          <p className="brand-sub">MENU</p>
+        </div>
       </section>
 
       <section className="section-card">
         <div className="section-head">
           <div>
-            <p className="eyebrow">MENU</p>
+            <p className="section-label">MENU</p>
             <h2>{activeCategory}</h2>
           </div>
           <p className="section-note">실제 판매 메뉴와 가격이 반영되는 영역</p>
@@ -69,11 +83,13 @@ function App() {
                     {item.image ? (
                       <img src={item.image} alt={item.name} />
                     ) : (
-                      <div className="image-placeholder">메뉴 사진</div>
+                      <div className="image-placeholder">MENU IMAGE</div>
                     )}
 
                     {highlightLabel && (
-                      <span className="highlight-badge">{highlightLabel}</span>
+                      <span className={getBadgeClassName(highlightLabel)}>
+                        {highlightLabel}
+                      </span>
                     )}
                   </div>
 
