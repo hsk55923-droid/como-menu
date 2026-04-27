@@ -11,7 +11,6 @@
   --muted: #887e72;
   --point: #d98624;
   --point-deep: #ba7118;
-  --walnut: #6d5644;
   --best-bg: linear-gradient(135deg, #d98624, #ba7118);
   --signature-bg: linear-gradient(135deg, #6e5440, #584332);
   --popular-bg: #efe2d0;
@@ -114,12 +113,7 @@ img {
   color: var(--text);
 }
 
-.section-note {
-  margin: 18px 0 0;
-  color: var(--muted);
-  font-size: 12px;
-  white-space: nowrap;
-}
+
 
 .category-tabs {
   display: flex;
@@ -288,4 +282,314 @@ img {
   color: #7c7268;
   font-size: 14px;
   line-height: 1.5;
+}
+
+/* drink page */
+.drink-page-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+
+.drink-two-column {
+  display: grid;
+  grid-template-columns: 1.08fr 0.92fr;
+  gap: 18px;
+}
+
+.drink-left-column,
+.drink-right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.drink-block,
+.wine-block {
+  border-radius: 24px;
+  border: 1px solid #ddd4c8;
+  background: var(--card);
+  box-shadow: 0 8px 18px rgba(75, 58, 39, 0.035);
+  padding: 16px;
+}
+
+.drink-block-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 14px;
+}
+
+.drink-block-label {
+  margin: 0 0 8px;
+  color: #9a8f83;
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+.drink-block-title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.ade-feature-card,
+.beer-feature-card {
+  margin-bottom: 14px;
+  border-radius: 20px;
+  border: 1px solid #e2d8ca;
+  background: #fffdf9;
+  overflow: hidden;
+}
+
+.ade-feature-content {
+  display: grid;
+  grid-template-columns: 1.18fr 0.82fr;
+  align-items: stretch;
+}
+
+.beer-feature-content {
+  display: grid;
+  grid-template-columns: 0.62fr 1.38fr;
+  align-items: stretch;
+}
+
+.ade-feature-text,
+.beer-feature-text {
+  padding: 20px 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ade-feature-text h4,
+.beer-feature-text h4 {
+  margin: 0 0 8px;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.ade-feature-text p,
+.beer-feature-text p {
+  margin: 0 0 16px;
+  color: #756b63;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.ade-feature-text strong,
+.beer-feature-text strong {
+  font-size: 22px;
+  font-weight: 800;
+  color: #241f1a;
+}
+
+.ade-feature-image,
+.ade-feature-placeholder,
+.beer-feature-image,
+.beer-feature-placeholder {
+  width: 100%;
+  height: 180px;
+}
+
+.ade-feature-image {
+  object-fit: cover;
+}
+
+.beer-feature-image {
+  object-fit: cover;
+  object-position: center;
+  background: #ddd4c8;
+}
+
+.ade-feature-placeholder,
+.beer-feature-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ddd4c8;
+  color: #8f8579;
+  font-size: 14px;
+  letter-spacing: 0.14em;
+}
+
+.drink-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.drink-list-item {
+  border-radius: 18px;
+  border: 1px solid #e3d9cb;
+  background: #fffdf9;
+  padding: 14px 16px;
+}
+
+.drink-list-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.drink-list-title {
+  margin: 0;
+  color: #2f2924;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.drink-list-sub {
+  margin: 6px 0 0;
+  color: #766c63;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.drink-list-price {
+  flex-shrink: 0;
+  color: #241f1a;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.drink-list-tag {
+  margin: 10px 0 0;
+  color: #9a8f83;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.tea-list .drink-list-item {
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+.tea-list .drink-list-title {
+  font-size: 18px;
+}
+
+.tea-list .drink-list-sub {
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* wine */
+.wine-group + .wine-group {
+  margin-top: 18px;
+}
+
+.wine-group-head {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.wine-group-head span {
+  display: inline-block;
+  padding-right: 12px;
+}
+
+.wine-group-head::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+}
+
+.wine-group-head.sparkling {
+  color: #b78b3d;
+}
+
+.wine-group-head.sparkling::after {
+  background: #d8c18f;
+}
+
+.wine-group-head.white {
+  color: #b18a3d;
+}
+
+.wine-group-head.white::after {
+  background: #d8c08c;
+}
+
+.wine-group-head.red {
+  color: #b1545c;
+}
+
+.wine-group-head.red::after {
+  background: #d38e94;
+}
+
+.wine-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.wine-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.wine-row-ko {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #2f2924;
+}
+
+.wine-row-en {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: #7a7168;
+  line-height: 1.4;
+}
+
+.wine-row-price {
+  flex-shrink: 0;
+  font-size: 16px;
+  font-weight: 800;
+  color: #241f1a;
+}
+
+.house-wine-box {
+  margin-top: 18px;
+  border-radius: 18px;
+  border: 1px solid #d9bf8d;
+  background: #fffaf3;
+  padding: 16px 18px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.house-wine-title {
+  margin: 0 0 10px;
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: #6d5644;
+}
+
+.house-wine-left p,
+.house-wine-right p {
+  margin: 4px 0;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.house-wine-right {
+  text-align: right;
+  font-weight: 700;
 }
