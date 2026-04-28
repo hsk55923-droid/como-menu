@@ -3,14 +3,16 @@ import "./App.css";
 import { categoryOrder, menuData } from "./menuData";
 
 const badgeMap = {
-  대표메뉴: "BEST",
-  시그니처: "SIGNATURE",
-  인기: "POPULAR",
-  추천: "RECOMMENDED",
-  BEST: "BEST",
-  SIGNATURE: "SIGNATURE",
-  POPULAR: "POPULAR",
-  RECOMMENDED: "RECOMMENDED",
+  대표메뉴: "대표",
+  대표: "대표",
+  시그니처: "시그니처",
+  인기: "인기",
+  추천: "추천",
+  "🌶": "🌶",
+  BEST: "대표",
+  SIGNATURE: "시그니처",
+  POPULAR: "인기",
+  RECOMMENDED: "추천",
 };
 
 function App() {
@@ -30,12 +32,13 @@ function App() {
   };
 
   const getBadgeClassName = (label) => {
-    if (label === "BEST") return "highlight-badge best";
-    if (label === "SIGNATURE") return "highlight-badge signature";
-    if (label === "POPULAR") return "highlight-badge popular";
-    if (label === "RECOMMENDED") return "highlight-badge recommended";
-    return "highlight-badge";
-  };
+  if (label === "대표") return "highlight-badge best";
+  if (label === "시그니처") return "highlight-badge signature";
+  if (label === "인기") return "highlight-badge popular";
+  if (label === "추천") return "highlight-badge recommended";
+  if (label === "🌶") return "highlight-badge spicy";
+  return "highlight-badge";
+};
 
   const renderDefaultCard = (item) => {
     const highlightLabel = getHighlightLabel(item.badges);
@@ -277,9 +280,12 @@ function App() {
       <section className="section-card">
         <div className="section-head">
           <div>
-            <p className="section-label">MENU</p>
-            <h2>{activeCategory}</h2>
-          </div>
+  <p className="section-label">MENU</p>
+  <h2>{activeCategory}</h2>
+  {activeCategory === "생면파스타" && (
+    <p className="category-guide">일부 메뉴는 면 변경이 가능합니다</p>
+  )}
+</div>
         
         </div>
 

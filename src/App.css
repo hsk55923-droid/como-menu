@@ -112,7 +112,12 @@ img {
   letter-spacing: -0.03em;
   color: var(--text);
 }
-
+.category-guide {
+  margin: 8px 0 0;
+  color: #8a8074;
+  font-size: 13px;
+  line-height: 1.4;
+}
 
 
 .category-tabs {
@@ -592,4 +597,11 @@ img {
 .house-wine-right {
   text-align: right;
   font-weight: 700;
+}
+.highlight-badge.spicy {
+  background: #c85b3c;
+  color: #ffffff;
+  box-shadow: 0 8px 18px rgba(181, 75, 45, 0.18);
+  font-size: 14px;
+  padding: 0 10px;
 }
