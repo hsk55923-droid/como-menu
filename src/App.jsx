@@ -60,7 +60,6 @@ function App() {
         </div>
 
         <div className="card-content">
-          <p className="mini-category">{item.category}</p>
 
           <div className="menu-title-price">
             <h3>{item.name}</h3>
@@ -282,9 +281,7 @@ function App() {
           <div>
   <p className="section-label">MENU</p>
   <h2>{activeCategory}</h2>
-  {activeCategory === "생면파스타" && (
-    <p className="category-guide">일부 메뉴는 면 변경이 가능합니다</p>
-  )}
+  
 </div>
         
         </div>
@@ -307,11 +304,19 @@ function App() {
           </div>
         ) : activeCategory === "음료" ? (
           renderDrinkCategory(filteredMenus)
-        ) : (
-          <div className="menu-grid">
-            {filteredMenus.map((item) => renderDefaultCard(item))}
-          </div>
-        )}
+       ) : (
+  <>
+    <div className="menu-grid">
+      {filteredMenus.map((item) => renderDefaultCard(item))}
+    </div>
+
+    {activeCategory === "생면파스타" && (
+      <div className="category-bottom-guide">
+        <p>※ 뇨끼를 제외한 일부 메뉴는 면 변경이 가능합니다.</p>
+      </div>
+    )}
+  </>
+)}
       </section>
     </div>
   );
